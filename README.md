@@ -23,6 +23,6 @@ export PATH=$PATH:$KEYCLOAK_PROJECT_DIR/quarkus/dist/target/keycloak-client-tool
 kcreg.sh config credentials --server http://localhost:8080 --realm master --user admin --password admin
 for i in {1..9000}
 do
-  kcreg.sh create -s clientId=$(echo $RANDOM | md5sum | head -c 20; echo;) -s 'redirectUris=["http://localhost:8980/myapp/*"]'
+  kcreg.sh create -s clientId=$(echo $RANDOM | md5sum | head -c 40; echo;) -s 'redirectUris=["http://localhost:8980/myapp/*"]'
 done
 ```

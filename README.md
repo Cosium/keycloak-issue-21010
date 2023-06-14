@@ -19,7 +19,7 @@ Make sure the admin username is `admin` and its password is `admin`.
 # Creating 9000 Keycloak clients
 
 ```shell
-export PATH=$PATH:[KEYCLOAK_PROJECT_DIR]/quarkus/dist/target/keycloak-client-tools/bin
+export PATH=$PATH:$KEYCLOAK_PROJECT_DIR/quarkus/dist/target/keycloak-client-tools/bin
 kcreg.sh config credentials --server http://localhost:8080 --realm master --user admin --password admin
 for i in {1..9000}
 do

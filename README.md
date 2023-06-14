@@ -23,6 +23,7 @@ export PATH=$PATH:$KEYCLOAK_PROJECT_DIR/quarkus/dist/target/keycloak-client-tool
 kcreg.sh config credentials --server http://localhost:8080 --realm master --user admin --password admin
 for i in {1..9000}
 do
+  echo "Creating client number ${i}"
   kcreg.sh create -s clientId=$(uuidgen) -s 'redirectUris=["http://localhost:8980/myapp/*"]'
 done
 ```
